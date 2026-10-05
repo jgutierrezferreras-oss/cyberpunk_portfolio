@@ -1,0 +1,558 @@
+/* ========================================
+   CONFIGURACIÓN GENERAL
+======================================== */
+
+:root {
+    --bg-dark: #070707;
+    --bg-secondary: #101010;
+    --card-bg: #151515;
+
+    --red-neon: #ff1744;
+    --red-bright: #ff003c;
+    --red-dark: #8b001c;
+
+    --white: #f5f5f5;
+    --gray: #aaaaaa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--white);
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* ========================================
+   NAVBAR
+======================================== */
+
+.cyber-navbar {
+    background: rgba(5, 5, 5, 0.92);
+    border-bottom: 1px solid rgba(255, 23, 68, 0.35);
+    backdrop-filter: blur(12px);
+    padding: 15px 0;
+}
+
+.navbar-brand {
+    color: var(--red-neon) !important;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    text-shadow:
+        0 0 5px var(--red-neon),
+        0 0 15px rgba(255, 23, 68, 0.7);
+}
+
+.nav-link {
+    color: #dddddd !important;
+    margin-left: 18px;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--red-neon) !important;
+    text-shadow: 0 0 10px var(--red-neon);
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(255, 0, 60, 0.13),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 10% 80%,
+            rgba(139, 0, 28, 0.12),
+            transparent 30%
+        ),
+        #070707;
+
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 23, 68, 0.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 23, 68, 0.035) 1px,
+            transparent 1px
+        );
+
+    background-size: 45px 45px;
+
+    pointer-events: none;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-tag {
+    color: var(--red-neon);
+    font-family: monospace;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(2.8rem, 6vw, 5.5rem);
+    font-weight: 800;
+    line-height: 1.05;
+}
+
+.neon-text {
+    display: block;
+    color: var(--red-neon);
+
+    text-shadow:
+        0 0 5px rgba(255, 23, 68, 0.8),
+        0 0 20px rgba(255, 23, 68, 0.5);
+}
+
+.hero h2 {
+    margin-top: 20px;
+    font-size: clamp(1.3rem, 3vw, 2rem);
+    color: #eeeeee;
+}
+
+.secondary-neon {
+    color: var(--red-neon);
+}
+
+.hero-description {
+    color: var(--gray);
+    max-width: 650px;
+    margin-top: 25px;
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+
+/* ========================================
+   BOTONES
+======================================== */
+
+.hero-buttons {
+    margin-top: 35px;
+}
+
+.btn-neon {
+    background-color: var(--red-neon);
+    color: white;
+    border: 2px solid var(--red-neon);
+    padding: 12px 28px;
+    margin-right: 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-neon:hover {
+    background-color: transparent;
+    color: var(--red-neon);
+
+    box-shadow:
+        0 0 10px var(--red-neon),
+        0 0 25px rgba(255, 23, 68, 0.5);
+}
+
+.btn-outline-neon {
+    background: transparent;
+    color: var(--red-neon);
+    border: 2px solid var(--red-neon);
+    padding: 12px 28px;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-outline-neon:hover {
+    background: var(--red-neon);
+    color: white;
+
+    box-shadow:
+        0 0 10px var(--red-neon),
+        0 0 25px rgba(255, 23, 68, 0.6);
+}
+
+
+/* ========================================
+   FOTO DE PERFIL
+======================================== */
+
+.profile-container {
+    display: inline-block;
+    position: relative;
+    padding: 8px;
+
+    border: 2px solid var(--red-neon);
+
+    box-shadow:
+        0 0 15px rgba(255, 23, 68, 0.6),
+        0 0 45px rgba(255, 23, 68, 0.25);
+
+    clip-path: polygon(
+        8% 0,
+        100% 0,
+        100% 92%,
+        92% 100%,
+        0 100%,
+        0 8%
+    );
+}
+
+.profile-image {
+    width: 340px;
+    height: 430px;
+
+    max-width: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    display: block;
+
+    filter:
+        contrast(1.05)
+        saturate(0.9);
+}
+
+
+/* ========================================
+   SECCIONES
+======================================== */
+
+.section-padding {
+    padding: 100px 0;
+}
+
+#tecnologias {
+    background: var(--bg-secondary);
+}
+
+#proyectos {
+    background: var(--bg-dark);
+}
+
+.section-title {
+    text-align: center;
+    color: var(--red-neon);
+    font-family: monospace;
+    font-weight: bold;
+    letter-spacing: 3px;
+
+    text-shadow:
+        0 0 10px rgba(255, 23, 68, 0.6);
+}
+
+
+/* ========================================
+   STACK TECNOLÓGICO
+======================================== */
+
+.tech-card {
+    background: var(--card-bg);
+    border: 1px solid #292929;
+
+    height: 100%;
+
+    padding: 35px 25px;
+
+    text-align: center;
+
+    border-radius: 8px;
+
+    transition:
+        transform 0.3s,
+        border-color 0.3s,
+        box-shadow 0.3s;
+}
+
+.tech-card i {
+    font-size: 3rem;
+    color: var(--red-neon);
+}
+
+.tech-card h3 {
+    margin-top: 20px;
+    font-size: 1.3rem;
+}
+
+.tech-card p {
+    color: var(--gray);
+}
+
+.tech-card:hover {
+    transform: translateY(-10px);
+
+    border-color: var(--red-neon);
+
+    box-shadow:
+        0 0 10px rgba(255, 23, 68, 0.6),
+        0 0 30px rgba(255, 23, 68, 0.25);
+}
+
+
+/* ========================================
+   FILTROS DE PROYECTOS
+======================================== */
+
+.filter-btn {
+    background: transparent;
+    color: #bbbbbb;
+
+    border: 1px solid #444;
+
+    padding: 9px 20px;
+    margin: 5px;
+
+    border-radius: 4px;
+
+    transition: 0.3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    color: white;
+    background: var(--red-neon);
+    border-color: var(--red-neon);
+
+    box-shadow:
+        0 0 12px rgba(255, 23, 68, 0.6);
+}
+
+
+/* ========================================
+   TARJETAS DE PROYECTOS
+======================================== */
+
+.project-card {
+    background: var(--card-bg);
+
+    border-left: 3px solid var(--red-neon);
+
+    padding: 30px;
+
+    height: 100%;
+
+    border-radius: 5px;
+
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 0 20px rgba(255, 23, 68, 0.25);
+}
+
+.project-card h3 {
+    color: var(--white);
+}
+
+.project-card p {
+    color: var(--gray);
+}
+
+.project-card span {
+    display: inline-block;
+
+    color: var(--red-neon);
+
+    border: 1px solid var(--red-dark);
+
+    padding: 5px 10px;
+    margin: 5px 4px 0 0;
+
+    font-size: 0.8rem;
+    font-family: monospace;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+    background: #030303;
+
+    border-top: 1px solid rgba(255, 23, 68, 0.3);
+
+    padding: 60px 0 30px;
+}
+
+footer h2 {
+    color: var(--red-neon);
+}
+
+.social-icons {
+    margin: 25px 0;
+}
+
+.social-icons a {
+    color: #dddddd;
+
+    font-size: 1.8rem;
+
+    margin: 0 12px;
+
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--red-neon);
+
+    text-shadow:
+        0 0 12px var(--red-neon);
+}
+
+footer p {
+    color: #777;
+}
+
+
+/* ========================================
+   BOTÓN VOLVER ARRIBA
+======================================== */
+
+#backToTop {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    border: 1px solid var(--red-neon);
+
+    background: #101010;
+    color: var(--red-neon);
+
+    font-size: 1.3rem;
+
+    cursor: pointer;
+
+    display: none;
+
+    z-index: 999;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 0 12px rgba(83, 21, 34, 0.4);
+}
+
+#backToTop:hover {
+    background: var(--red-neon);
+    color: white;
+
+    box-shadow:
+        0 0 20px var(--red-neon);
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 991px) {
+
+    .hero {
+        padding-top: 100px;
+        padding-bottom: 70px;
+    }
+
+    .hero .row {
+        text-align: center;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .profile-container {
+        margin-top: 60px;
+    }
+
+    .profile-image {
+        width: 300px;
+        height: 380px;
+    }
+
+    .nav-link {
+        margin-left: 0;
+        padding: 10px 0;
+    }
+}
+
+
+@media (max-width: 576px) {
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero h2 {
+        font-size: 1.25rem;
+    }
+
+    .hero-buttons .btn {
+        display: block;
+
+        width: 100%;
+
+        margin:
+            10px 0;
+    }
+
+    .profile-image {
+        width: 260px;
+        height: 330px;
+    }
+
+    .section-padding {
+        padding: 75px 0;
+    }
+    /* Etiqueta para proyectos de ejemplo */
+
+.example-label {
+    display: block;
+    color: #777;
+    font-size: 0.75rem;
+    font-family: monospace;
+    margin-bottom: 10px;
+}
+}
